@@ -1,0 +1,25 @@
+<div class="flex flex-row items-center m-2">
+    <mat-form-field class="-mb-5" >
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="formName">
+    </mat-form-field>
+    <button class="mx-2" mat-raised-button (click)="clear()">clear</button>
+    <button class="mx-2" mat-raised-button color="primary" (click)="search()">search</button>
+</div>
+
+
+<div class="max-w-[1000px] mx-auto flex flex-row flex-wrap justify-center">
+    <div *ngFor="let product of products">
+        <app-product [product]="product" (addToBasket)="onAddToBasket($event)"></app-product>
+    </div>
+</div>
+
+<div class="max-w-[1000px] mt-2 px-4 mx-auto flex flex-row justify-between">
+    <button [disabled]="filter.currentPage==0" mat-mini-fab color="primary" (click)="previous()">
+        <mat-icon class="m-0 p-0">arrow_back</mat-icon>
+    </button>
+    <p>page {{filter.currentPage+1}}/{{numberOfPage()}}</p>
+    <button [disabled]="filter.currentPage >= numberOfPage()-1" mat-mini-fab color="primary" (click)="next()">
+        <mat-icon class="m-0 p-0">arrow_forward</mat-icon>
+    </button>
+</div>

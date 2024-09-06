@@ -1,0 +1,10 @@
+<header id="header">
+    <mat-toolbar class="justify-between w-[100px]" color="primary">
+        <a routerLink="/" class="w-[30px]">
+            <img src="assets/logo.png" alt="logo flexyte">
+        </a>
+        <button mat-button (click)="toBasket()" color="accent">
+            <mat-icon color="accent" matBadge="{{basket.length}}" matBadgeSize="small">shopping_cart</mat-icon>
+        </button>
+    </mat-toolbar>
+</header>

@@ -1,0 +1,9 @@
+<mat-card appearance="outlined" class="w-[300px] h-[350px] m-4 justify-between">
+    <img class="max-h-[170px]" src="{{'data:image/jpg;base64,' + product.image}}">
+    <mat-card-content>{{product.name}}</mat-card-content>
+    <mat-card-content>{{product.description}}</mat-card-content>
+    <mat-card-content>{{product.price}} €</mat-card-content>
+    <button mat-raised-button color="accent" (click)="onAddToBasket()">
+        add to basket
+    </button>
+</mat-card>
